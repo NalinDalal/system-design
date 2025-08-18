@@ -560,57 +560,6 @@ Discord’s solution relies on **Cassandra’s linear scalability + Snowflake ID
 ```mermaid
 flowchart TD
     subgraph Client[User Client]
-        U1[Send Message]
-        U2[Edit/Delete Message]
-    end
-
-    subgraph API[API Servers]
-        A1[Assign Snowflake ID (time sortable)]
-        A2[Double Write (MongoDB + Cassandra) during migration]
-    end
-
-    subgraph Cassandra[Cassandra Cluster]
-        direction TB
-        C1[Partition Key: (channel_id, bucket)]
-        C2[Clustering Key: message_id (Snowflake)]
-        C3[Value: message data]
-
-        C1 --> C2 --> C3
-    end
-
-    subgraph StorageLogic[Storage Logic]
-        S1[Bucket by 10-day window → avoid huge partitions]
-        S2[Reads scan sequential buckets until enough msgs]
-        S3[Tombstones for deletes (expire after compaction)]
-    end
-
-    subgraph Issues[Operational Issues]
-        I1[Zombie messages (edit/delete race conditions)]
-        I2[Millions of tombstones → GC storms]
-    end
-
-    subgraph Fixes[Fixes & Optimizations]
-        F1[Write only non-null columns]
-        F2[Track empty buckets to skip scans]
-        F3[Lower tombstone TTL (10 → 2 days)]
-    end
-
-    U1 --> API
-    U2 --> API
-    API --> A1 --> Cassandra
-    Cassandra --> StorageLogic
-    StorageLogic --> Issues
-    Issues --> Fixes
-
-```
-
-we will move on to now creating a chat application
-
-check:
-
-```mermaid
-flowchart TD
-    subgraph Client[User Client]
         U1["Send Message"]
         U2["Edit/Delete Message"]
     end
@@ -654,3 +603,5 @@ flowchart TD
     Issues --> Fixes
 
 ```
+
+we will move on to now creating a chat application
