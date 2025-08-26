@@ -76,7 +76,7 @@ Each request consumes one token. When a request arrives, we check if there are e
 flowchart TD
 
     R[Requests] --> C{Enough tokens?}
-    Refill[Refiller (adds tokens)] --> Bucket[(Bucket)]
+    Refill[Refiller &#40;adds tokens&#41;] --> Bucket[(Bucket)]
     Bucket --> C
 
     C -->|Yes| F[Forward requests]
@@ -172,24 +172,25 @@ this one fixes that issue:
 flowchart TD
 
     subgraph Step1[①]
-        A1[Request at 1:00:01] --> B1[Log: {1:00:01}]
+        A1[Request at 1:00:01] --> B1[Log: &#123;1:00:01&#125;]
         B1 --> C1[✅ Accepted]
     end
 
     subgraph Step2[②]
-        A2[Request at 1:00:30] --> B2[Log: {1:00:01, 1:00:30}]
+        A2[Request at 1:00:30] --> B2[Log: &#123;1:00:01, 1:00:30&#125;]
         B2 --> C2[✅ Accepted]
     end
 
     subgraph Step3[③]
-        A3[Request at 1:00:50] --> B3[Log: {1:00:01, 1:00:30, 1:00:50}]
+        A3[Request at 1:00:50] --> B3[Log: &#123;1:00:01, 1:00:30, 1:00:50&#125;]
         B3 --> C3[❌ Rejected]
     end
 
     subgraph Step4[④]
-        A4[Request at 1:01:40] --> B4[Log: {1:00:50, 1:01:40}]
+        A4[Request at 1:01:40] --> B4[Log: &#123;1:00:50, 1:01:40&#125;]
         B4 --> C4[✅ Accepted]
     end
+
 ```
 
 the rate limiter allows 2 requests per minute. Usually, Linux timestamps are
@@ -362,7 +363,8 @@ high level the condition are:
 
 ```mermaid
 flowchart TB
-    title["Original counter value: 3"]
+    T["Original counter value: 3"]
+    style T fill=none,stroke=none,font-weight=bold
 
     subgraph R1["request 1"]
         A[read_counter<br/>counter: 3] --> B[check_and_increment<br/>counter: 4]
@@ -394,7 +396,7 @@ not contain any data about client 2. Thus, the rate limiter cannot work properly
 
 ```mermaid
 flowchart LR
-    subgraph L[""]
+    subgraph L[" "]
         direction TB
         subgraph C1["Client 1"]
             Laptop1["💻"] --- Phone1["📱"]
@@ -407,7 +409,7 @@ flowchart LR
         C2 --> RL2["Rate limiter 2"]
     end
 
-    subgraph R[""]
+    subgraph R[" "]
         direction TB
         subgraph C3["Client 1"]
             Laptop3["💻"] --- Phone3["📱"]
@@ -459,26 +461,42 @@ flowchart LR
 # Monitoring
 
 we want to make sure:
-• The rate limiting algorithm is effective.
-• The rate limiting rules are effective.
+
+- The rate limiting algorithm is effective.
+- The rate limiting rules are effective.
 
 ---
 
 # References
 
 [1] ![Rate-limiting strategies and techniques](https://cloud.google.com/solutions/rate-limiting-strategies-techniques)
+
 [2] ![Twitter rate limits](https://developer.twitter.com/en/docs/basics/rate-limits)
+
 [3] ![Google docs usage limits](https://developers.google.com/docs/api/limits)
+
 [4] ![IBM microservices](https://www.ibm.com/cloud/learn/microservices)
+
 [5] ![Throttle API requests for better throughput](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html)
+
 [6] ![Stripe rate limiters](https://stripe.com/blog/rate-limiters)
+
 [7] ![Shopify REST Admin API rate limits](https://help.shopify.com/en/api/reference/rest-admin-api-rate-limits)
+
 [8] ![Better Rate Limiting With Redis Sorted Sets](https://engineering.classdojo.com/blog/2015/02/06/rolling-rate-limiter/)
+
 [9] ![System Design — Rate limiter and Data modelling](https://medium.com/@saisandeepmopuri/system-design-rate-limiter-and-data-modelling-9304b0d18250)
+
 [10] ![How we built rate limiting capable of scaling to millions of domains](https://blog.cloudflare.com/counting-things-a-lot-of-different-things/)
+
 [11] ![Redis website](https://redis.io/)
+
 [12] ![Lyft rate limiting](https://github.com/lyft/ratelimit)
+
 [13] ![Scaling your API with rate limiters](https://gist.github.com/ptarjan/e38f45f2dfe601419ca3af937fff574d#request-rate-limiter)
+
 [14] ![What is edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/)
+
 [15] ![Rate Limit Requests with Iptables](https://blog.programster.org/rate-limit-requests-with-iptables)
+
 [16] ![OSI model](https://en.wikipedia.org/wiki/OSI_model#Layer_architecture)
