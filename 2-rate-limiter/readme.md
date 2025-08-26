@@ -381,6 +381,27 @@ flowchart TB
     class note error
 ```
 
+```mermaid
+flowchart TB
+    T["Original counter value: 3"]
+
+    subgraph R1["request 1"]
+        A[read_counter<br/>counter: 3] --> B[check_and_increment<br/>counter: 4]
+    end
+
+    subgraph R2["request 2"]
+        C[read_counter<br/>counter: 3] --> D[check_and_increment<br/>counter: 4]
+    end
+
+    T --> A
+    T --> C
+    B --> note["Counter should be: 5<br/>but is actually: 4<br/>(race condition!)"]
+    D --> note
+
+    classDef errorStyle fill:#ffcccc,stroke:#cc0000,color:#000000
+    class note errorStyle
+```
+
 Assume the counter value in Redis is 3.
 If two requests concurrently read the counter value before either of them writes the value back, each will increment the counter by one and write
 it back without checking the other thread.
