@@ -367,25 +367,6 @@ flowchart TB
     T["Original counter value: 3"]
 
     subgraph R1["request 1"]
-        A[read_counter\ncounter: 3] --> B[check_and_increment\ncounter: 4]
-    end
-
-    subgraph R2["request 2"]
-        C[read_counter\ncounter: 3] --> D[check_and_increment\ncounter: 4]
-    end
-
-    D --> note["Counter should be: 5"]
-
-    %% only single-style per classDef works on GitHub
-    classDef error color=red
-    class note error
-```
-
-```mermaid
-flowchart TB
-    T["Original counter value: 3"]
-
-    subgraph R1["request 1"]
         A[read_counter<br/>counter: 3] --> B[check_and_increment<br/>counter: 4]
     end
 
@@ -484,6 +465,8 @@ we want to make sure:
 
 - The rate limiting algorithm is effective.
 - The rate limiting rules are effective.
+
+![code Implementation](https://github.com/NalinDalal/week-45-rate-limiting/tree/main)
 
 ---
 
