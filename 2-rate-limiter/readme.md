@@ -357,29 +357,27 @@ hmm, single server is no task. However, scaling the system to support multiple s
 
 **Race Condition:**
 high level the condition are:
-• Read the counter value from Redis.
-• Check if ( counter + 1 ) exceeds the threshold.
-• If not, increment the counter value by 1 in Redis.
+
+- Read the counter value from Redis.
+- Check if ( counter + 1 ) exceeds the threshold.
+- If not, increment the counter value by 1 in Redis.
 
 ```mermaid
 flowchart TB
     T["Original counter value: 3"]
-    style T fill=none,stroke=none,font-weight=bold
 
     subgraph R1["request 1"]
-        A[read_counter<br/>counter: 3] --> B[check_and_increment<br/>counter: 4]
+        A[read_counter\ncounter: 3] --> B[check_and_increment\ncounter: 4]
     end
 
     subgraph R2["request 2"]
-        C[read_counter<br/>counter: 3] --> D[check_and_increment<br/>counter: 4]
+        C[read_counter\ncounter: 3] --> D[check_and_increment\ncounter: 4]
     end
 
-    style title fill=none,stroke=none
-
-    note["Counter should be: 5"]:::error
-    D --> note
+    D --> note["Counter should be: 5"]
 
     classDef error fill=none,stroke=none,color=red,font-weight=bold;
+    class note error
 ```
 
 Assume the counter value in Redis is 3.
