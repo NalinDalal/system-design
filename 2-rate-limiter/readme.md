@@ -377,7 +377,7 @@ flowchart TB
     D --> note["Counter should be: 5"]
 
     %% only single-style per classDef works on GitHub
-    classDef error color=red;
+    classDef error color=red
     class note error
 ```
 
