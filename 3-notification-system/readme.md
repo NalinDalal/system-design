@@ -63,7 +63,7 @@ flowchart LR
         U3((User))
     end
 
-    U1 --> S[POST /signup\n{fname, lname, email}]
+    U1 --> S[POST /signup\n(fname, lname, email)]
     U2 --> S
     U3 --> S
 
@@ -228,7 +228,7 @@ flowchart LR
     PNW[Push Notification Worker]
 
     %% DLQ
-    DLQ[[DLQ\n(Max Retry = 10)]]
+    DLQ[DLQ\n(Max Retry = 10)]
 
     %% Flows
     Broker --> EQ
@@ -371,66 +371,66 @@ flowchart TD
     A([Should we send a notification?]):::user
 
     A -->|No| N1((NO)):::no
-    A -->|Yes| B1[Thread message && User subscribed?]:::parsing
+    A -->|Yes| B1["Thread message && User subscribed?"]:::parsing
 
     %% Left side branch
-    B1 -->|No| B2[Channel muted?]:::user
-    B1 -->|Yes| C1[User in DnD?]:::user
+    B1 -->|No| B2["Channel muted?"]:::user
+    B1 -->|Yes| C1["User in DnD?"]:::user
 
     B2 -->|Yes| N1
     B2 -->|No| C1
 
-    C1 -->|Yes| C2[DnD Override?]:::pref
-    C1 -->|No| D1[@channel/@everyone/@here message?]:::parsing
+    C1 -->|Yes| C2["DnD Override?"]:::pref
+    C1 -->|No| D1["@channel/@everyone/@here message?"]:::parsing
 
     C2 -->|No| N1
     C2 -->|Yes| D1
 
-    D1 -->|Yes| D2[@channel mentions suppressed?]:::pref
-    D1 -->|No| E1[Channel notification pref is "Nothing"]:::prefVal
+    D1 -->|Yes| D2["@channel mentions suppressed?"]:::pref
+    D1 -->|No| E1["Channel notification pref is 'Nothing'"]:::prefVal
 
     D2 -->|Yes| E1
     D2 -->|No| YES1((YES)):::yes
 
     E1 -->|Yes| N1
-    E1 -->|No| E2[thread_everything pref on?]:::prefVal
+    E1 -->|No| E2["thread_everything pref on?"]:::prefVal
 
     E2 -->|Yes| YES1
-    E2 -->|No| E3[Thread message && User subscribed?]:::parsing
+    E2 -->|No| E3["Thread message && User subscribed?"]:::parsing
 
     E3 -->|Yes| YES1
-    E3 -->|No| F1[What is the user’s channel notification pref for this device?]:::pref
+    E3 -->|No| F1["What is the user’s channel notification pref for this device?"]:::pref
 
     %% Channel Pref branches
-    F1 --> F2a[Nothing]:::prefVal
-    F1 --> F2b[Everything]:::prefVal
-    F1 --> F2c[Mentions]:::prefVal
-    F1 --> F2d[Default]:::prefVal
+    F1 --> F2a["Nothing"]:::prefVal
+    F1 --> F2b["Everything"]:::prefVal
+    F1 --> F2c["Mentions"]:::prefVal
+    F1 --> F2d["Default"]:::prefVal
 
     F2a --> N1
     F2b --> YES1
 
-    F2c --> G1[Thread message?]:::parsing
-    G1 -->|Yes| G2[User subscribed?]:::user
-    G1 -->|No| G3[DM?]:::parsing
+    F2c --> G1["Thread message?"]:::parsing
+    G1 -->|Yes| G2["User subscribed?"]:::user
+    G1 -->|No| G3["DM?"]:::parsing
 
     G2 -->|Yes| YES1
     G2 -->|No| N1
 
     G3 -->|Yes| YES1
-    G3 -->|No| G4[@mention?]:::parsing
+    G3 -->|No| G4["@mention?"]:::parsing
 
     G4 -->|Yes| YES1
-    G4 -->|No| G5[Comment on file owned by user (desktop)]:::user
+    G4 -->|No| G5["Comment on file owned by user (desktop)"]:::user
     G5 -->|Yes| YES1
     G5 -->|No| N1
 
-    F2d --> H1[What is the user’s global notification pref for this device?]:::pref
-    H1 --> H2a[Mentions]:::prefVal
-    H1 --> H2b[DMs (mobile)]:::prefVal
-    H1 --> H2c[Highlight Words (mobile)]:::prefVal
-    H1 --> H2d[All]:::prefVal
-    H1 --> H2e[Never]:::prefVal
+    F2d --> H1["What is the user’s global notification pref for this device?"]:::pref
+    H1 --> H2a["Mentions"]:::prefVal
+    H1 --> H2b["DMs (mobile)"]:::prefVal
+    H1 --> H2c["Highlight Words (mobile)"]:::prefVal
+    H1 --> H2d["All"]:::prefVal
+    H1 --> H2e["Never"]:::prefVal
 
     H2e --> N1
 
@@ -438,28 +438,28 @@ flowchart TD
     H2b --> G3
     H2c --> G4
 
-    H2d --> J1[Thread message?]:::parsing
-    J1 -->|Yes| J2[User subscribed?]:::user
-    J1 -->|No| J3[@here]:::parsing
+    H2d --> J1["Thread message?"]:::parsing
+    J1 -->|Yes| J2["User subscribed?"]:::user
+    J1 -->|No| J3["@here"]:::parsing
 
     J2 -->|Yes| YES1
     J2 -->|No| N1
 
     J3 -->|Yes| YES1
-    J3 -->|No| J4[Highlight word?]:::parsing
+    J3 -->|No| J4["Highlight word?"]:::parsing
     J4 -->|Yes| YES1
-    J4 -->|No| J5[User presence active?]:::user
+    J4 -->|No| J5["User presence active?"]:::user
 
     J5 -->|No| YES1
-    J5 -->|Yes| J6[Thread message?]:::parsing
-    J6 -->|Yes| J7[User subscribed?]:::user
+    J5 -->|Yes| J6["Thread message?"]:::parsing
+    J6 -->|Yes| J7["User subscribed?"]:::user
     J6 -->|No| N1
     J7 -->|Yes| YES1
     J7 -->|No| N1
 
     %% Success branch
-    YES1 --> M1[Mobile?]:::user
-    M1 -->|Yes| M2[Past mobile push timing threshold?]:::user
+    YES1 --> M1["Mobile?"]:::user
+    M1 -->|Yes| M2["Past mobile push timing threshold?"]:::user
     M2 -->|Yes| YES2((YES)):::yes
     M2 -->|No| N1
     M1 -->|No| YES2
@@ -467,5 +467,4 @@ flowchart TD
     %% End states
     N1:::no
     YES2:::yes
-
 ```
