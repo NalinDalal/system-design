@@ -63,7 +63,7 @@ flowchart LR
         U3((User))
     end
 
-    U1 --> S[POST /signup\n(fname, lname, email)]
+    U1 --> S[POST /signup (fname, lname, email)]
     U2 --> S
     U3 --> S
 
@@ -228,7 +228,7 @@ flowchart LR
     PNW[Push Notification Worker]
 
     %% DLQ
-    DLQ[DLQ\n(Max Retry = 10)]
+    DLQ[DLQ<br/>(Max Retry = 10)]
 
     %% Flows
     Broker --> EQ
@@ -253,9 +253,9 @@ flowchart LR
 
     %% API mapping
     subgraph API Calls
-        A1[POST /login\nsendToEmailQueue]
-        A2[POST /post\nsendToInAppQueue]
-        A3[POST /friend-req\nsendToPushQueue]
+        A1[POST /login<br/>sendToEmailQueue]
+        A2[POST /post<br/>sendToInAppQueue]
+        A3[POST /friend-req<br/>sendToPushQueue]
     end
 
     A1 --> EQ
@@ -321,8 +321,8 @@ flowchart LR
     NoteDLQ["Max Retries = 10"]
 
     %% Flows
-    Broker -->|user.signup\nuser.login| EQ
-    Broker -->|user.post\nuser.login| IAQ
+    Broker -->|user.signup<br/>user.login| EQ
+    Broker -->|user.post<br/>user.login| IAQ
     Broker -->|user.send_req| PNQ
 
     EQ --> EW
@@ -342,7 +342,7 @@ flowchart LR
 
     %% API Calls
     subgraph API Calls
-        A1[POST /signup,\n/login]
+        A1[POST /signup,<br/>/login]
         A2[POST /post]
         A3[POST /send_req]
     end
