@@ -63,7 +63,7 @@ flowchart LR
         U3((User))
     end
 
-    U1 --> S[POST /signup (fname, lname, email)]
+    U1 --> S[POST /signup<br/> (fname, lname, email)]
     U2 --> S
     U3 --> S
 
@@ -73,10 +73,10 @@ flowchart LR
     S --> R[Response]
 
     Q -->|1000| RL[Rate Limiting]
-    RL --> W1[Email Worker\n2 seconds]
-    RL --> W2[Email Worker\n2 seconds]
+    RL --> W1[Email Worker<br/>2 seconds]
+    RL --> W2[Email Worker<br/>2 seconds]
 
-    W1 --> M[M Service\n30m/s\n25m/s]
+    W1 --> M[M Service<br/>30m/s<br/>25m/s]
     W2 --> M
 ```
 
