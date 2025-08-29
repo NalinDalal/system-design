@@ -62,7 +62,7 @@ flowchart LR
         U3((User))
     end
 
-    U1 --> S[POST /signup (fname, lname, email)]
+    U1 --> S[POST /signup <br/>fname, lname, email]
     U2 --> S
     U3 --> S
 
@@ -228,7 +228,7 @@ flowchart LR
     PNW[Push Notification Worker]
 
     %% DLQ
-    DLQ[DLQ (Max Retry = 10)]
+    DLQ["DLQ (Max Retry = 10)"]
 
     %% Flows
     Broker --> EQ
