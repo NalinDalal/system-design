@@ -55,7 +55,6 @@ once 2 sec gets over, take 30 more from queue
 in real life if given 30 we take only 25 to be on safe side
 
 ```mermaid
-
 flowchart LR
     subgraph Users
         U1((User))
@@ -63,7 +62,7 @@ flowchart LR
         U3((User))
     end
 
-    U1 --> S[POST /signup<br/> (fname, lname, email)]
+    U1 --> S[POST /signup (fname, lname, email)]
     U2 --> S
     U3 --> S
 
@@ -199,6 +198,7 @@ sendToPushQueue
 ```
 
 this system is still scalable, but the coupling has increased
+<br/>
 not a good approach
 
 ```mermaid
@@ -228,7 +228,7 @@ flowchart LR
     PNW[Push Notification Worker]
 
     %% DLQ
-    DLQ[DLQ<br/>(Max Retry = 10)]
+    DLQ[DLQ (Max Retry = 10)]
 
     %% Flows
     Broker --> EQ
@@ -253,9 +253,9 @@ flowchart LR
 
     %% API mapping
     subgraph API Calls
-        A1[POST /login<br/>sendToEmailQueue]
-        A2[POST /post<br/>sendToInAppQueue]
-        A3[POST /friend-req<br/>sendToPushQueue]
+        A1[POST /login - sendToEmailQueue]
+        A2[POST /post - sendToInAppQueue]
+        A3[POST /friend-req - sendToPushQueue]
     end
 
     A1 --> EQ
