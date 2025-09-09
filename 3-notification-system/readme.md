@@ -79,6 +79,9 @@ flowchart LR
     W2 --> M
 ```
 
+- Fast response to user. 
+- Provider throttling handled via queue + rate limiter.
+
 ## professional
 
 multiple users don't talk directly to server, they talk to load balancer
@@ -471,3 +474,24 @@ flowchart TD
 
 ![next-js-simulator](https://github.com/NalinDalal/notification-system-smulator)
 ![bun](https://github.com/NalinDalal/notification-system-bun)
+
+---
+
+# Reliability & Features
+
+- Caching: contact info & templates.
+- Rate limiting: avoid spam + respect provider caps.
+- Preferences: per-user DND/mute.
+- Templates: reusable messages with placeholders.
+- Fallback providers: if Twilio fails, use backup.
+- Monitoring: queue depth, latency, error rate.
+
+---
+
+[1] [Twilio SMS](https://www.twilio.com/sms)
+[2] [Nexmo SMS](https://www.nexmo.com/products/sms)
+[3] [Sendgrid](https://sendgrid.com/)
+[4] [Mailchimp](https://mailchimp.com/)
+[5] [You Cannot Have Exactly-Once Delivery](https://bravenewgeek.com/you-cannot-have-exactly-once-delivery/)
+[6] [Security in Push Notifications](https://cloud.ibm.com/docs/services/mobilepush?topic=mobile-pushnotification-security-in-push-notifications)
+[7] [RadditMQ](https://bit.ly/2sotIa6)
