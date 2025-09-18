@@ -413,3 +413,7 @@ upload videos to the right location, we introduce pre-signed URLs
 11. [YouTube scalability talk by early YouTube employee](https://www.youtube.com/watch?v=w5WVu624fY8)
 12. [Understanding the characteristics of internet short video sharing: A youtube-based measurement study.](https://arxiv.org/pdf/0707.3670.pdf)
 13. [Content Popularity for Open Connect](https://netflixtechblog.com/content-popularity-for-open-connect-b86d56f613b)
+
+---
+
+[Rust Implementation](https://github.com/NalinDalal/video-transcoder-rs.git)
