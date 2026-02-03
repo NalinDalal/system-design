@@ -103,6 +103,14 @@ Here is a list of engineering blogs of well-known large companies and startups:
 - [Twitter](https://blog.twitter.com/engineering/en_us.html)
 - [Thumbtack](https://www.thumbtack.com/engineering)
 - [Uber](http://eng.uber.com)
+- [WhatsApp](https://github.com/Bhup-GitHUB/wp-des)
 - [Yahoo](https://yahooeng.tumblr.com)
 - [Yelp](https://engineeringblog.yelp.com)
 - [Zoom](https://medium.com/zoom-developer-blog)
+
+---
+
+[engineering blogs](https://github.com/kilimchoi/engineering-blogs)
+[machine-coding](https://workattech.github.io/machinecoding/)
+[lld & machine coding](https://github.com/lavakumarThatisetti/Machine-Coding-Round)
+[lld primer](https://github.com/prasadgujar/low-level-design-primer)
