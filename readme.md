@@ -23,7 +23,6 @@ The following materials can help you understand general design ideas of real sys
 ### Amazon
 
 - [Amazon Architecture](https://goo.gl/k4feoW)
-- [Dynamo: Amazon's Highly Available Key-value Store](https://goo.gl/C7zxDL)
 
 ### Netflix
 
@@ -114,3 +113,9 @@ Here is a list of engineering blogs of well-known large companies and startups:
 [machine-coding](https://workattech.github.io/machinecoding/)
 [lld & machine coding](https://github.com/lavakumarThatisetti/Machine-Coding-Round)
 [lld primer](https://github.com/prasadgujar/low-level-design-primer)
+
+---
+
+to do:
+
+[upi](https://codefarm0.medium.com/designing-a-upi-payment-system-real-time-processing-bank-integration-transaction-routing-0bb4bb93e12a)
