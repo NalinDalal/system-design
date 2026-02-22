@@ -35,13 +35,7 @@ The following materials can help you understand general design ideas of real sys
 
 - [Google Architecture](https://goo.gl/dvkDiY)
 - [The Google File System (Google Docs)](https://goo.gl/xj5n9R)
-- [Differential Synchronization (Google Docs)](https://goo.gl/9zqG7x)
 - [Bigtable: A Distributed Storage System for Structured Data](https://goo.gl/6NaZca)
-
-### YouTube
-
-- [YouTube Architecture](https://goo.gl/mCPRUF)
-- [Seattle Conference on Scalability: YouTube Scalability](https://goo.gl/dH3zYq)
 
 ### Instagram
 
