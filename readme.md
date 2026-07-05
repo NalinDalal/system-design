@@ -1,8 +1,39 @@
 # System Design
 
-We'll put system design mocks here, case studies and all related stuff.
-Once any of system design is like completed, we will try to fucking code it.
-Let's see.
+System design case studies, mocks, and reference materials.
+
+## Case Studies
+
+| # | File | Description |
+|---|------|-------------|
+| 1 | [ChatApp](1.ChatApp.md) | Basic chat application |
+| 2 | [Rate Limiter](2.RateLimiter.md) | Rate limiting algorithms & design |
+| 3 | [Notification System](3.NotificationSystem.md) | Push/email/SMS notification delivery |
+| 4 | [File Storage System](4.FileStorageSystem.md) | Distributed file storage |
+| 5 | [Consistent Hashing](5.ConsistentHashing.md) | Consistent hashing deep-dive |
+| 6 | [Key-Value Store](6.KeyValueStorage.md) | Distributed key-value storage |
+| 7 | [ID Generator](7.ID-Generator.md) | Unique ID generation (Snowflake etc.) |
+| 8 | [URL Shortener](8.URL-Shorten.md) | URL shortening service |
+| 9 | [Web Crawler](9.WebCrawler.md) | Scalable web crawler |
+| 10 | [News Feed](10.NewsFeed.md) | News feed system |
+| 11 | [Search Autocomplete](11.SearchAutoComplete.md) | Search autocomplete & top-K |
+| 12 | [YouTube](12.YouTube.md) | Video streaming platform |
+| 13 | [Google Drive](13.GoogleDrive.md) | Cloud file storage |
+| 14 | [Proximity Service](14.ProximityService.md) | Location-based proximity search |
+| 15 | [Nearby Friends](15.NearbyFriends.md) | Real-time nearby friends |
+| 16 | [Google Maps](16.GoogleMaps.md) | Mapping & navigation system |
+| 17 | [Distributed Msg Queue](17.DistributedMsgQueue.md) | Distributed message queue |
+| 18 | [Metrics Monitor & Alert](18.MetricsMonitor&AlertSystem.md) | Metrics monitoring & alerting |
+| 19 | [Ad Click Aggregation](19.AdClickEventAggregation.md) | Ad click event aggregation |
+| 20 | [Hotel Reservation](20.HotelManagement.md) | Hotel reservation system |
+| 21 | [Distributed Email](21.DistributedEmailService.md) | Distributed email service |
+| 22 | [S3 Object Storage](22.S3-Object-Storage.md) | S3-like object storage |
+| 23 | [Gaming Leaderboard](23.RealTimeGamingLeaderBoard.md) | Real-time gaming leaderboard |
+| 24 | [Payment System](24.PaymentSystem.md) | Payment processing system |
+| 25 | [Digital Wallet](25.DigitalWallet.md) | Digital wallet |
+| 26 | [Stock Exchange](26.StockExchange.md) | Stock exchange system |
+
+---
 
 ## Real-world Systems
 
@@ -104,9 +135,18 @@ Here is a list of engineering blogs of well-known large companies and startups:
 ---
 
 [engineering blogs](https://github.com/kilimchoi/engineering-blogs)
+
 [machine-coding](https://workattech.github.io/machinecoding/)
+
 [lld & machine coding](https://github.com/lavakumarThatisetti/Machine-Coding-Round)
+
 [lld primer](https://github.com/prasadgujar/low-level-design-primer)
+
+[awesome-low-level-design](https://github.com/ashishps1/awesome-low-level-design)
+
+[awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources)
+
+[system-design-101](https://github.com/ByteByteGoHq/system-design-101)
 
 ---
 
