@@ -153,3 +153,77 @@ Here is a list of engineering blogs of well-known large companies and startups:
 to do:
 
 [upi](https://codefarm0.medium.com/designing-a-upi-payment-system-real-time-processing-bank-integration-transaction-routing-0bb4bb93e12a)
+
+---
+
+
+
+# Fresher Level System Design
+
+4. Design a simple social media platform.
+5. Design a simple e-commerce website.
+6. Design a basic ride-sharing system.
+7. Design a basic video streaming service.
+8. Design a simple recommendation system.
+9. Design a basic food delivery app.
+10. Design a parking lot management system.
+11. Design a simple music streaming service.
+12. Design a basic online ticket booking system.
+13. Design a simple note-taking application.
+14. Design a weather forecasting system.
+15. Design a basic email service.
+16. Design a file synchronization system.
+17. Design a simple calendar application.
+18. Design a basic online quiz platform.
+19. Design a user authentication system.
+
+# Experienced Level System Design
+
+3. Design a scalable social network like Facebook.
+4. Design a scalable recommendation system like Netflix.
+5. Design a distributed file system like Hadoop's HDFS.
+6. Design a web crawler like Google. - done
+7. Design a content delivery network (CDN) like Cloudflare.
+8. Design a ride-sharing system like Uber.
+9. Design an online food delivery system like Zomato.
+10. Design a collaborative document editing system like Google Docs.
+11. Design an e-commerce platform like Amazon.
+12. Design a recommendation system for an online marketplace.
+13. Design a fault-tolerant distributed database system.
+14. Design a scalable event-driven system like Twitter.
+15. Design a distributed task scheduling system.
+
+# Preparing for System Design Interviews
+
+20 questions to cover everything you need:
+
+## Beginner
+
+0. Design URL Shortener: [YouTube](https://www.youtube.com/watch?v=fMZMm_0ZhK4)
+1. Design a Leaderboard: [System Design One](https://systemdesign.one/leaderboard-system-des/)
+2. Design a Vending Machine: [YouTube](https://www.youtube.com/watch?v=D0kDMUgo27c)
+3. Design an Authentication System: [YouTube](https://www.youtube.com/watch?v=uj_4vxm9u90)
+4. Design a Content Delivery Network (CDN): [YouTube](https://www.youtube.com/watch?v=8zX0rue2Hic)
+
+## Intermediate
+
+5. Design Google Search: [YouTube](https://www.youtube.com/watch?v=CeGtqouT8eA)
+6. Design Tinder: [YouTube](https://www.youtube.com/watch?v=tndzLznxq40)
+7. Design Autocomplete for Search Engines: [YouTube](https://www.youtube.com/watch?v=us0qySiUsGU)
+8. Design a Flight Booking System: [YouTube](https://www.youtube.com/watch?v=qsGcfVGvFSs)
+9. Design a Payment System: [YouTube](https://www.youtube.com/watch?v=olfaBgJrUBI)
+10. Design a Stock Exchange System: [YouTube](https://www.youtube.com/watch?v=dUMWMZmMsVE)
+11. Design WhatsApp: [YouTube](https://www.youtube.com/watch?v=vvhC64hQZMk)
+
+## Advanced
+
+12. Design a File Sharing System like Dropbox: [YouTube](https://www.youtube.com/watch?v=U0xTu6E2CT8)
+13. Design a Code Deployment System: [YouTube](https://www.youtube.com/watch?v=q0KGYwNbf-0)
+14. Design Google Maps: [YouTube](https://www.youtube.com/watch?v=jk3yvVfNvds)
+15. Design Uber: [YouTube](https://www.youtube.com/watch?v=umWABit-wbk)
+16. Design Zoom: [YouTube](https://www.youtube.com/watch?v=G32ThJakeHk)
+17. Design Slack: [System Design One](https://systemdesign.one/slack-architecture)
+18. Design a Food Delivery App like Doordash: [YouTube](https://www.youtube.com/watch?v=iRhSAR3ldTw)
+19. Design a Distributed Message Queue like Kafka: [YouTube](https://www.youtube.com/watch?v=iJLL-KPqBpM)
+
+
